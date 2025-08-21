@@ -42,7 +42,7 @@ const Conta = {
   getGruposTransacoes(): GrupoTransacao[] {
     const gruposTransacoes: GrupoTransacao[] = []
     const listaTransacoes: Transacao[] = structuredClone(transacoes)
-    const transacoesOrdenadas: Transacao[] = listaTransacoes.sort((t1, t2) => t2.data.getTime() - t1.data.getTime())
+    const transacoesOrdenadas: Transacao[] = [...listaTransacoes].sort((t1, t2) => t2.data.getTime() - t1.data.getTime())
     let labelAtualGrupoTransacao: string = ''
 
     for (let transacao of transacoesOrdenadas) {
